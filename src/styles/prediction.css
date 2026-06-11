@@ -207,6 +207,9 @@ body {
   .submit-btn {
     min-width: 100%;
   }
+  .clear-btn {
+    min-width: 100%;
+  }
 }
 .match-info {
   display: grid;

@@ -239,7 +239,7 @@ body {
 }
 
 /* Tablet */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .match-info {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -247,6 +247,12 @@ body {
 
   .info-value {
     font-size: 16px;
+  }
+} */
+
+@media (max-width: 768px) {
+  .match-info {
+    display: none;
   }
 }
 
@@ -519,4 +525,24 @@ body {
   .prediction-table {
     min-width: 900px;
   }
+}
+
+.match-select {
+  margin-bottom: 20px;
+}
+
+.match-select .MuiOutlinedInput-root {
+  border-radius: 12px;
+  background: #fff;
+}
+
+.match-select .MuiInputLabel-root {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.match-select .MuiSelect-select {
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 500;
 }

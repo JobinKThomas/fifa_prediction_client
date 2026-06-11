@@ -1,4 +1,10 @@
-// import MainContent from "../components/MainContent";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@mui/material";
+import { useState } from "react";
 import SideBar from "../components/sideBar";
 import MainContent from './MainContent';
 import "../styles/prediction.css";
@@ -13,18 +19,50 @@ export default function Prediction() {
 
         return fixturesByDate[dateKey] || [];
     };
+    
     const matches = gettodayFixtures(fixtures);
+
+    const [selectedMatch, setSelectedMatch] = useState(matches?.[0] || null);
+
+    const handleMatchChange = (event) => {
+        const match = matches.find(
+            (item) => item.match === event.target.value
+        );
+
+        setSelectedMatch(match);
+    };
 
     return (
         <>
-      {matches.map((match) => (
         <div className="prediction-page">
             <div className="prediction-card">
                 <SideBar />
-                <MainContent match={match}/>
+                <div style={{ flex: 1, padding: "20px" }}>
+                    <FormControl  className="match-select">
+                        <InputLabel>Select Match</InputLabel>
+
+                        <Select
+                            value={selectedMatch?.match || ""}
+                            label="Select Match"
+                            onChange={handleMatchChange}
+                        >
+                            {matches.map((match) => (
+                            <MenuItem
+                                key={match.match}
+                                value={match.match}
+                            >
+                                {match.date} | {match.teams[0].name} vs {match.teams[1].name}
+                            </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+
+                    {selectedMatch && (
+                        <MainContent match={selectedMatch} />
+                    )}
+                </div>
             </div>
         </div>
-      ))}
       </>
     );
 }

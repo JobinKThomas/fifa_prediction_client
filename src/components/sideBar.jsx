@@ -8,7 +8,7 @@ export default function SideBar() {
           </div>
 
           <div className="badge">
-            🏆 ₹100 prize per match
+            🏆 ₹50 prize per match
           </div>
 
           <div className="badge">

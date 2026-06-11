@@ -9,18 +9,24 @@ import SideBar from "../components/sideBar";
 import MainContent from './MainContent';
 import "../styles/prediction.css";
 import { fixtures } from "../data"
+import dayjs from 'dayjs';
 
 export default function Prediction() {
-    const gettodayFixtures = (fixturesByDate) => {
-        const today = new Date();
-        today.setDate(today.getDate() + 1);
+    // const gettodayFixtures = (fixturesByDate) => {
+    //     const today = new Date();
+    //     today.setDate(today.getDate() + 1);
 
-        const dateKey = today.toISOString().split("T")[0];
+    //     const dateKey = today.toISOString().split("T")[0];
+    //     console.log(new Date(), today, 'todaytoday', dateKey)
 
-        return fixturesByDate[dateKey] || [];
-    };
+
+    //     return fixturesByDate[dateKey] || [];
+    // };
     
-    const matches = gettodayFixtures(fixtures);
+    // const matches = gettodayFixtures(fixtures);
+
+    const dateKey = dayjs().add(1, 'day').format('YYYY-MM-DD');
+    const matches = fixtures?.[dateKey] || [];
 
     const [selectedMatch, setSelectedMatch] = useState(matches?.[0] || null);
 

@@ -1,31 +1,77 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@mui/material";
+import "../styles/prediction.css";
 
 function PredictionList() {
   const [predictions, setPredictions] = useState([]);
 
   useEffect(() => {
-  async function loadData() {
-    try {
-      const { data } = await axios.get(
-        "https://fifa-prediction-server.onrender.com/api/predictions"
-      );
+    async function loadData() {
+      try {
+        const { data } = await axios.get(
+          "https://fifa-prediction-server.onrender.com/api/predictions"
+        );
 
-      setPredictions(data.data);
-    } catch (error) {
-      console.error(error);
+        setPredictions(data.data);
+      } catch (error) {
+        console.error(error);
+      }
     }
-  }
 
-  loadData();
-}, []);
-  console.log(predictions, 'predictionspredictions');
+    loadData();
+  }, []);
+
+  const uniqueMatches = useMemo(() => {
+    return [
+      ...new Map(
+        predictions.map((item) => [item.matchNo, item])
+      ).values(),
+    ];
+  }, [predictions]);
+
+  const [selectedMatchNo, setSelectedMatchNo] = useState("");
+
+  const currentMatchNo =
+    selectedMatchNo || uniqueMatches?.[0]?.matchNo || "";
+
+  const selectedPredictions = useMemo(() => {
+    return predictions.filter(
+      (item) => item.matchNo === currentMatchNo
+    );
+  }, [predictions, currentMatchNo]);
+
+  const handleMatchChange = (event) => {
+    setSelectedMatchNo(event.target.value);
+  };
   
   return (
     <div className="table-container">
       <h2>Prediction List</h2>
-
-      <table className="prediction-table">
+      <div style={{ flex: 1, padding: "20px" }}>
+        <FormControl fullWidth className="match-select">
+          <InputLabel>Select Match</InputLabel>
+          <Select
+            value={selectedMatchNo}
+            label="Select Match"
+            onChange={handleMatchChange}
+          >
+            {uniqueMatches.map((match) => (
+              <MenuItem
+                key={match.matchNo}
+                value={match.matchNo}
+              >
+                Match {match.matchNo} | {match.teamA} vs {match.teamB}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <table className="prediction-table">
         <thead>
           <tr>
             <th>#</th>
@@ -37,10 +83,12 @@ function PredictionList() {
         </thead>
 
         <tbody>
-          {predictions.map((item, index) => (
+          {selectedPredictions.map((item, index) => (
             <tr key={item._id}>
               <td>{index + 1}</td>
+
               <td>{item.name}</td>
+
               <td>{item.mobile}</td>
 
               <td>
@@ -50,11 +98,11 @@ function PredictionList() {
               <td>
                 {item.teamAScore} - {item.teamBScore}
               </td>
-
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

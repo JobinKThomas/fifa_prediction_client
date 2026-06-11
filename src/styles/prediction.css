@@ -549,3 +549,20 @@ body {
   font-size: 15px;
   font-weight: 500;
 }
+.search-input {
+  margin-bottom: 20px !important;
+}
+
+.search-input .MuiOutlinedInput-root {
+  border-radius: 12px;
+  background: #fff;
+}
+
+.search-input .MuiInputBase-input {
+  font-size: 15px;
+  padding: 14px;
+}
+
+.search-input .MuiInputLabel-root {
+  font-weight: 500;
+}

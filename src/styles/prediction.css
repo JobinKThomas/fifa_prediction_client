@@ -76,21 +76,6 @@ body {
   font-weight: 500;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .vs {
   width: 42px;
   height: 42px;
@@ -101,12 +86,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-
-
-
-
-
 
 .participant-box {
   margin-top: 15px;
@@ -153,9 +132,13 @@ body {
 }
 
 .clear-btn {
-  border: none;
+  min-width: 300px;
+  height: 50px;
+  border-radius: 999px;
+  border: 2px solid #ff0000;
   background: transparent;
   color: red;
+  background: white;
   font-size: 18px;
   cursor: pointer;
 }
@@ -227,7 +210,7 @@ body {
 }
 .match-info {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
@@ -493,5 +476,47 @@ body {
   .prediction-option:nth-child(2),
   .prediction-option:nth-child(3) {
     justify-self: start;
+  }
+}
+.table-container {
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.table-container h2 {
+  margin-bottom: 20px;
+}
+
+.prediction-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.prediction-table th,
+.prediction-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.prediction-table th {
+  background: #00a84f;
+  color: white;
+}
+
+.prediction-table tbody tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.prediction-table tbody tr:hover {
+  background: #eef9f1;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .prediction-table {
+    min-width: 900px;
   }
 }

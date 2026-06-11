@@ -11,6 +11,7 @@ export default function MainContent({ match }) {
         teamBScore: "",
         name: "",
         mobile: "",
+        prediction: 'DRAW'
     });
     const handleChange = (field, value) => {
         setFormData((prev) => ({
@@ -37,6 +38,7 @@ export default function MainContent({ match }) {
             group: match.group,
             teamA: teamA.name,
             teamB: teamB.name,
+            prediction: 'DRAW',
             ...formData,
         };
 
@@ -67,6 +69,7 @@ export default function MainContent({ match }) {
             teamBScore: "",
             name: "",
             mobile: "",
+            prediction: 'DRAW'
         });
     };
     const validateMobile = (mobile) => {

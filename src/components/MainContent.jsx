@@ -43,7 +43,7 @@ export default function MainContent({ match }) {
 
         try {
             const { data } = await axios.post(
-            "https://fifa-prediction-api.onrender.com/api/predictions",
+            "https://fifa-prediction-server.onrender.com/api/predictions",
             payload
             );
 

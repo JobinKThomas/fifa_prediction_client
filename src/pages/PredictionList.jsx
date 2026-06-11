@@ -8,7 +8,7 @@ function PredictionList() {
   async function loadData() {
     try {
       const { data } = await axios.get(
-        "https://fifa-prediction-api.onrender.com/api/predictions"
+        "https://fifa-prediction-server.onrender.com/api/predictions"
       );
 
       setPredictions(data.data);

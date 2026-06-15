@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "../styles/prediction.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function MainContent({ match }) {
     const { teams } = match;
@@ -43,9 +44,13 @@ export default function MainContent({ match }) {
 
         try {
             const { data } = await axios.post(
-            "https://fifa-prediction-server.onrender.com/api/predictions",
-            payload
+                `${API_URL}/api/predictions`,
+                payload
             );
+            // const { data } = await axios.post(
+            // "https://fifa-prediction-server.onrender.com/api/predictions",
+            // payload
+            // );
 
             console.log(data);
 

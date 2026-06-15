@@ -5,7 +5,8 @@ import {
 } from "react-router-dom";
 import PredictionList from "./pages/PredictionList";
 import Prediction from "./pages/Prediction";
-// import PredictionPage from "./pages/PredictionPage";
+import MyPredictions from "./pages/MyPredictions";
+import AdminPage from './pages/Admin'
 
 function App() {
   return (
@@ -18,6 +19,14 @@ function App() {
         <Route
           path="/predictionList"
           element={<PredictionList />}
+        />
+        <Route
+          path="/my-predictions"
+          element={<MyPredictions />}
+        />
+        <Route
+          path="/admin"
+          element={<AdminPage />}
         />
       </Routes>
     </BrowserRouter>

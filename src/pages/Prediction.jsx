@@ -8,26 +8,35 @@ import { useState } from "react";
 import SideBar from "../components/sideBar";
 import MainContent from './MainContent';
 import "../styles/prediction.css";
-import { fixtures } from "../data"
+import { fixtures } from "../data";
 import dayjs from 'dayjs';
+import customParseFormat from "dayjs/plugin/customParseFormat";
 
 export default function Prediction() {
-    // const gettodayFixtures = (fixturesByDate) => {
-    //     const today = new Date();
-    //     today.setDate(today.getDate() + 1);
+    dayjs.extend(customParseFormat);
 
-    //     const dateKey = today.toISOString().split("T")[0];
-    //     console.log(new Date(), today, 'todaytoday', dateKey)
+    const getAvailableMatches = (fixtures) => {
+        const now = dayjs();
 
+        const today = now.format("YYYY-MM-DD");
+        const tomorrow = now.add(1, "day").format("YYYY-MM-DD");
 
-    //     return fixturesByDate[dateKey] || [];
-    // };
-    
-    // const matches = gettodayFixtures(fixtures);
+        // Remaining matches today
+        const todayMatches = (fixtures[today] || []).filter((match) => {
+            const matchDateTime = dayjs(
+            `${match.date} ${match.time}`,
+            "YYYY-MM-DD HH.mm"
+            );
 
-    const dateKey = dayjs().add(1, 'day').format('YYYY-MM-DD');
-    const matches = fixtures?.[dateKey] || [];
+            return now.isBefore(matchDateTime);
+        });
 
+        // All tomorrow matches
+        const tomorrowMatches = fixtures[tomorrow] || [];
+
+        return [...todayMatches, ...tomorrowMatches];
+    };
+    const matches = getAvailableMatches(fixtures);
     const [selectedMatch, setSelectedMatch] = useState(matches?.[0] || null);
 
     const handleMatchChange = (event) => {

@@ -7,6 +7,7 @@ import {
   Select,
 } from "@mui/material";
 import "../styles/prediction.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function PredictionList() {
   const [predictions, setPredictions] = useState([]);
@@ -15,8 +16,11 @@ function PredictionList() {
     async function loadData() {
       try {
         const { data } = await axios.get(
-          "https://fifa-prediction-server.onrender.com/api/predictions"
+          `${API_URL}/api/predictions`
         );
+        // const { data } = await axios.get(
+        //   "https://fifa-prediction-server.onrender.com/api/predictions"
+        // );
 
         setPredictions(data.data);
       } catch (error) {
@@ -34,6 +38,7 @@ function PredictionList() {
       ).values(),
     ];
   }, [predictions]);
+  
 
   const [selectedMatchNo, setSelectedMatchNo] = useState("");
 
@@ -78,26 +83,23 @@ function PredictionList() {
             <th>Name</th>
             <th>Mobile</th>
             <th>Match</th>
-            <th>Score</th>
+            <th>Predicted Score</th>
+            <th>Match Score</th>
           </tr>
         </thead>
-
         <tbody>
           {selectedPredictions.map((item, index) => (
             <tr key={item._id}>
               <td>{index + 1}</td>
-
               <td>{item.name}</td>
-
               <td>{item.mobile}</td>
-
               <td>
                 {item.teamA} vs {item.teamB}
               </td>
-
               <td>
                 {item.teamAScore} - {item.teamBScore}
               </td>
+              <td></td>
             </tr>
           ))}
         </tbody>

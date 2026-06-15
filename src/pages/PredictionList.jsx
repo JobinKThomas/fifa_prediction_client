@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import {
+  Button,
   FormControl,
   InputLabel,
   MenuItem,
@@ -54,7 +55,23 @@ function PredictionList() {
   const handleMatchChange = (event) => {
     setSelectedMatchNo(event.target.value);
   };
-  
+  const saveResult = async (match) => {
+    const payload = {
+        matchNo: match.matchNo,
+        mobile: match.mobile,
+        paymentStatus: !match?.paymentStatus
+    };
+    try {
+        await axios.put(
+          `${API_URL}/api/predictions/payment-status`,
+          payload
+        );
+        alert("Result Saved");
+      }
+      catch (error) {
+            console.error(error);
+        }
+  }
   return (
     <div className="table-container">
       <h2>Prediction List</h2>
@@ -85,6 +102,7 @@ function PredictionList() {
             <th>Match</th>
             <th>Predicted Score</th>
             <th>Match Score</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -99,7 +117,20 @@ function PredictionList() {
               <td>
                 {item.teamAScore} - {item.teamBScore}
               </td>
-              <td></td>
+              <td>
+                {item.teamAResult !== null && item.teamBResult !== null
+                  ? `${item.teamAResult} - ${item.teamBResult}`
+                  : null}
+              </td>
+              <td>
+                <Button
+                  variant="contained"
+                  size="small"
+                  onClick={() => saveResult(item)}
+                >
+                  {item?.paymentStatus ? 'Paid' : 'Mark as Paid'}
+                </Button>
+              </td>
             </tr>
           ))}
         </tbody>

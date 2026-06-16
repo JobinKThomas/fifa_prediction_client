@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { 
   fetchLeaderBoard
@@ -25,6 +25,11 @@ export default function LeaderBoard() {
   const { predictionResults, loading } = useSelector(
     (state) => state.predictions
   );
+  const [expanded, setExpanded] = useState(false);
+
+  const handleAccordionChange = (panel) => (_, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
   useEffect(() => {
     dispatch(fetchLeaderBoard());
   }, [dispatch]);
@@ -137,6 +142,8 @@ export default function LeaderBoard() {
         {leaderboard.map((user, index) => (
             <Accordion
                 key={user.mobile}
+                expanded={expanded === user.mobile}
+                onChange={handleAccordionChange(user.mobile)}
                 sx={{
                 mb: 1,
                 borderRadius: 2,
@@ -145,12 +152,22 @@ export default function LeaderBoard() {
                 }}
             >
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Stack
-                        direction="row"
-                        alignItems="center"
-                        spacing={2}
-                        width="100%"
+                    <div
+                        style={{
+                            width:"100%",
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center"
+                        }}
                     >
+                        <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            gap: "10px"
+
+                        }}>
                         <Chip
                         label={`#${index + 1}`}
                         color={
@@ -180,12 +197,12 @@ export default function LeaderBoard() {
                             {user.mobile}
                         </Typography>
                         </Box>
-
+                        </div>
                         <Chip
                         color="primary"
                         label={`${user.totalPoints} pts`}
                         />
-                    </Stack>
+                    </div>
                 </AccordionSummary>
 
                 <AccordionDetails>
@@ -201,47 +218,71 @@ export default function LeaderBoard() {
                                 borderColor: "divider",
                             }}
                         >
-                            <Typography fontWeight={600}>
+                            <div style={{
+                                fontWeight: 700,
+                            }}>
                                 {match.teamA} vs {match.teamB}
-                            </Typography>
+                            </div>
+                            <div
+                            style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            gap: "10px"
+                            }}>
 
+                            
                             <Stack
                                 direction="row"
                                 justifyContent="space-between"
                                 mt={1}
                             >
-                                <Typography variant="body2">
+                                <div style={{
+                                fontWeight: 500,
+                                }}>
                                 Prediction
-                                </Typography>
+                                </div>
 
-                                <Typography>
+                                <div style={{
+                                fontWeight: 600,
+                                marginLeft: "5px"
+                                }}>
                                 {match.teamAScore} - {match.teamBScore}
-                                </Typography>
+                                </div>
                             </Stack>
 
                             <Stack
                                 direction="row"
                                 justifyContent="space-between"
                             >
-                                <Typography variant="body2">
+                                <div style={{
+                                fontWeight: 500,
+                                }}>
                                 Actual
-                                </Typography>
+                                </div>
 
-                                <Typography>
+                                <div style={{
+                                fontWeight: 600,
+                                marginLeft: "5px"
+                                }}>
                                 {match.teamAResult ?? "-"} -{" "}
                                 {match.teamBResult ?? "-"}
-                                </Typography>
+                                </div>
                             </Stack>
-
+                            </div>
                             <Stack
                                 direction="row"
                                 justifyContent="space-between"
                                 mt={1}
                             >
-                                <Typography variant="body2">
+                                <div style={{
+                                fontWeight: 600,
+                                }}>
                                 Points
-                                </Typography>
-
+                                </div>
+                                <div style={{
+                                marginLeft: "5px"
+                                }}>
                                 <Chip
                                 size="small"
                                 color={
@@ -253,6 +294,7 @@ export default function LeaderBoard() {
                                 }
                                 label={match.points}
                                 />
+                                </div>
                             </Stack>
                         </Box>
                     ))}

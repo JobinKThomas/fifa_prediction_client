@@ -14,10 +14,14 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import IconButton from "@mui/material/IconButton";
+import { useNavigate } from "react-router-dom";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export default function LeaderBoard() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { predictionResults, loading } = useSelector(
     (state) => state.predictions
   );
@@ -55,12 +59,39 @@ export default function LeaderBoard() {
                 mb: 3,
                 p: 3,
                 borderRadius: 3,
-                background:
-                "linear-gradient(135deg,#1976d2,#42a5f5)",
+                background: "linear-gradient(135deg,#00ad48,#00c853)",
                 color: "white",
+                position: "relative",
+                textAlign: "center",
             }}
         >
-            <Typography variant="h4" fontWeight={700}>
+            <IconButton
+                onClick={() => navigate("/")}
+                sx={{
+                position: "absolute",
+                left: 16,
+                top: 16,
+                color: "white",
+                bgcolor: "rgba(255,255,255,0.15)",
+                "&:hover": {
+                    bgcolor: "rgba(255,255,255,0.25)",
+                },
+                }}
+            >
+                <ArrowBackIcon />
+            </IconButton>
+
+            <Typography
+                variant="h4"
+                fontWeight={700}
+                sx={{ 
+                    mt: 1, 
+                    fontSize: {
+                    xs: "1.8rem",
+                    sm: "2.2rem",
+                    }, 
+                }}
+            >
                 🏆 Leaderboard
             </Typography>
 

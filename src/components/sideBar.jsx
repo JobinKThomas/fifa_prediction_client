@@ -1,4 +1,8 @@
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+// import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
+// import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import "../styles/prediction.css";
+import { NavLink } from "react-router-dom";
 
 export default function SideBar() {
     return(
@@ -6,14 +10,17 @@ export default function SideBar() {
           <div className="vertical-title">
             FIFA WORLD CUP 2026
           </div>
+          {/* <NavLink to="/">
+            <SportsSoccerIcon />
+          </NavLink> */}
 
-          {/* <div className="badge">
-            🏆 ₹50 prize per match
-          </div>
+          <NavLink to="/leaderBoard">
+            <EmojiEventsIcon />
+          </NavLink>
 
-          <div className="badge">
-            📱 ₹10 per prediction
-          </div> */}
+          {/* <NavLink to="/matchWinner">
+            <WorkspacePremiumIcon />
+          </NavLink> */}
         </aside>
     )
 }

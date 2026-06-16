@@ -1,9 +1,12 @@
 import { useState } from "react";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { createPrediction } from "../features/prediction/predictionSlice";
+
 import "../styles/prediction.css";
-const API_URL = import.meta.env.VITE_API_URL;
 
 export default function MainContent({ match }) {
+    const dispatch = useDispatch();
+
     const { teams } = match;
     const [teamA, teamB] = teams;
 
@@ -29,9 +32,13 @@ export default function MainContent({ match }) {
         return alert("Please enter mobile number");
         }
 
-        if (!formData.teamAScore || !formData.teamBScore) {
-        return alert("Please enter both team scores");
+        if (
+            formData.teamAScore === "" ||
+            formData.teamBScore === ""
+        ) {
+            return alert("Please enter both team scores");
         }
+
         const payload = {
             matchNo: match.match,
             date: match.date,
@@ -44,24 +51,13 @@ export default function MainContent({ match }) {
         };
 
         try {
-            const { data } = await axios.post(
-                `${API_URL}/api/predictions`,
-                payload
-                );
-            // const { data } = await axios.post(
-            // "https://fifa-prediction-server.onrender.com/api/predictions",
-            // payload
-            // );
-
-            console.log(data);
+            await dispatch(createPrediction(payload)).unwrap();
 
             alert("Prediction submitted successfully");
-
             handleClear();
         } catch (error) {
-            console.error(error);
-
             alert(
+            error?.message ||
             error?.response?.data?.message ||
             "Failed to submit prediction"
             );

@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { updateMatchResult } from "../features/prediction/predictionSlice";
+
 import { fixtures } from "../data";
 import {
   Box,
@@ -13,10 +16,10 @@ import {
   Button,
   TextField
 } from "@mui/material";
-import axios from "axios";
-const API_URL = import.meta.env.VITE_API_URL;
 
 function AdminPage() {
+    const dispatch = useDispatch();
+
     const [scores, setScores] = useState({});
     const handleScoreChange = (matchNo, team, value) => {
     setScores((prev) => ({
@@ -28,22 +31,21 @@ function AdminPage() {
     }));
     };
     const saveResult = async (match) => {
-      const payload = {
-          matchNo: match.match,
-          teamAResult: Number(scores[match.match]?.teamAResult || 0),
-          teamBResult: Number(scores[match.match]?.teamBResult || 0),
-      };
       try {
-        await axios.put(
-          `${API_URL}/api/predictions/match-result`,
-          payload
-        );
+        await dispatch(
+          updateMatchResult({
+            match,
+            scores,
+          })
+        ).unwrap();
+
         alert("Result Saved");
+      } catch (error) {
+        console.error(error);
+        alert("Failed to save result");
       }
-      catch (error) {
-            console.error(error);
-        }
     }
+    
     return (
     <Box>
       {Object.entries(fixtures).map(([date, matches]) => (

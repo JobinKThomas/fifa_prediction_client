@@ -6,6 +6,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group A",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Mexico City",
             "teams": [
                 {
@@ -24,6 +25,7 @@ export const fixtures = {
             "time": "07.30",
             "group": "Group A",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Guadalajara",
             "teams": [
                 {
@@ -44,6 +46,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group B",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Toronto",
             "teams": [
                 {
@@ -62,6 +65,7 @@ export const fixtures = {
             "time": "06.30",
             "group": "Group D",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Los Angeles",
             "teams": [
                 {
@@ -82,6 +86,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group B",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "San Francisco Bay Area",
             "teams": [
                 {
@@ -100,6 +105,7 @@ export const fixtures = {
             "time": "03.30",
             "group": "Group C",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "New Jersey",
             "teams": [
                 {
@@ -118,6 +124,7 @@ export const fixtures = {
             "time": "06.30",
             "group": "Group C",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Boston",
             "teams": [
                 {
@@ -136,6 +143,7 @@ export const fixtures = {
             "time": "09.30",
             "group": "Group D",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Vancouver",
             "teams": [
                 {
@@ -154,6 +162,7 @@ export const fixtures = {
             "time": "22.30",
             "group": "Group E",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Houston",
             "teams": [
                 {
@@ -174,6 +183,7 @@ export const fixtures = {
             "time": "01.30",
             "group": "Group F",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Dallas",
             "teams": [
                 {
@@ -192,6 +202,7 @@ export const fixtures = {
             "time": "04.30",
             "group": "Group E",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Philadelphia",
             "teams": [
                 {
@@ -210,6 +221,7 @@ export const fixtures = {
             "time": "07.30",
             "group": "Group F",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Monterrey",
             "teams": [
                 {
@@ -228,6 +240,7 @@ export const fixtures = {
             "time": "21.30",
             "group": "Group H",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Atlanta",
             "teams": [
                 {
@@ -248,6 +261,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group G",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Seattle",
             "teams": [
                 {
@@ -266,6 +280,7 @@ export const fixtures = {
             "time": "03.30",
             "group": "Group H",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Miami",
             "teams": [
                 {
@@ -284,6 +299,7 @@ export const fixtures = {
             "time": "06.30",
             "group": "Group G",
             "stage": "First Stage",
+            "matchCompleted":"Completed",
             "venue": "Los Angeles",
             "teams": [
                 {
@@ -304,6 +320,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group I",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "New Jersey",
             "teams": [
                 {
@@ -322,6 +339,7 @@ export const fixtures = {
             "time": "03.30",
             "group": "Group I",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Boston",
             "teams": [
                 {
@@ -340,6 +358,7 @@ export const fixtures = {
             "time": "06.30",
             "group": "Group J",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Kansas City",
             "teams": [
                 {
@@ -358,6 +377,7 @@ export const fixtures = {
             "time": "09.30",
             "group": "Group J",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "San Francisco Bay Area",
             "teams": [
                 {
@@ -376,6 +396,7 @@ export const fixtures = {
             "time": "22.30",
             "group": "Group K",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Houston",
             "teams": [
                 {
@@ -396,6 +417,7 @@ export const fixtures = {
             "time": "01.30",
             "group": "Group L",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Dallas",
             "teams": [
                 {
@@ -414,6 +436,7 @@ export const fixtures = {
             "time": "04.30",
             "group": "Group L",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Toronto",
             "teams": [
                 {
@@ -432,6 +455,7 @@ export const fixtures = {
             "time": "07.30",
             "group": "Group K",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Mexico City",
             "teams": [
                 {
@@ -450,6 +474,7 @@ export const fixtures = {
             "time": "21.30",
             "group": "Group A",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Atlanta",
             "teams": [
                 {
@@ -470,6 +495,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group B",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Los Angeles",
             "teams": [
                 {
@@ -488,6 +514,7 @@ export const fixtures = {
             "time": "03.30",
             "group": "Group B",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Vancouver",
             "teams": [
                 {
@@ -506,6 +533,7 @@ export const fixtures = {
             "time": "06.30",
             "group": "Group A",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Guadalajara",
             "teams": [
                 {
@@ -526,6 +554,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group D",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Seattle",
             "teams": [
                 {
@@ -544,6 +573,7 @@ export const fixtures = {
             "time": "03.30",
             "group": "Group C",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Boston",
             "teams": [
                 {
@@ -562,6 +592,7 @@ export const fixtures = {
             "time": "06.00",
             "group": "Group C",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Philadelphia",
             "teams": [
                 {
@@ -580,6 +611,7 @@ export const fixtures = {
             "time": "08.30",
             "group": "Group D",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "San Francisco Bay Area",
             "teams": [
                 {
@@ -598,6 +630,7 @@ export const fixtures = {
             "time": "22.30",
             "group": "Group F",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Houston",
             "teams": [
                 {
@@ -618,6 +651,7 @@ export const fixtures = {
             "time": "01.30",
             "group": "Group E",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Toronto",
             "teams": [
                 {
@@ -636,6 +670,7 @@ export const fixtures = {
             "time": "05.30",
             "group": "Group E",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Kansas City",
             "teams": [
                 {
@@ -654,6 +689,7 @@ export const fixtures = {
             "time": "09.30",
             "group": "Group F",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Monterrey",
             "teams": [
                 {
@@ -672,6 +708,7 @@ export const fixtures = {
             "time": "21.30",
             "group": "Group H",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Atlanta",
             "teams": [
                 {
@@ -692,6 +729,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group G",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Los Angeles",
             "teams": [
                 {
@@ -710,6 +748,7 @@ export const fixtures = {
             "time": "03.30",
             "group": "Group H",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Miami",
             "teams": [
                 {
@@ -728,6 +767,7 @@ export const fixtures = {
             "time": "06.30",
             "group": "Group G",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Vancouver",
             "teams": [
                 {
@@ -746,6 +786,7 @@ export const fixtures = {
             "time": "22.30",
             "group": "Group J",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Dallas",
             "teams": [
                 {
@@ -766,6 +807,7 @@ export const fixtures = {
             "time": "02.30",
             "group": "Group I",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Philadelphia",
             "teams": [
                 {
@@ -784,6 +826,7 @@ export const fixtures = {
             "time": "05.30",
             "group": "Group I",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "New Jersey",
             "teams": [
                 {
@@ -802,6 +845,7 @@ export const fixtures = {
             "time": "08.30",
             "group": "Group J",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "San Francisco Bay Area",
             "teams": [
                 {
@@ -820,6 +864,7 @@ export const fixtures = {
             "time": "22.30",
             "group": "Group K",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Houston",
             "teams": [
                 {
@@ -840,6 +885,7 @@ export const fixtures = {
             "time": "01.30",
             "group": "Group L",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Boston",
             "teams": [
                 {
@@ -858,6 +904,7 @@ export const fixtures = {
             "time": "04.30",
             "group": "Group L",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Toronto",
             "teams": [
                 {
@@ -876,6 +923,7 @@ export const fixtures = {
             "time": "07.30",
             "group": "Group K",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Guadalajara",
             "teams": [
                 {
@@ -896,6 +944,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group B",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Vancouver",
             "teams": [
                 {
@@ -914,6 +963,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group B",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Seattle",
             "teams": [
                 {
@@ -932,6 +982,7 @@ export const fixtures = {
             "time": "03.30",
             "group": "Group C",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Miami",
             "teams": [
                 {
@@ -950,6 +1001,7 @@ export const fixtures = {
             "time": "03.30",
             "group": "Group C",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Atlanta",
             "teams": [
                 {
@@ -968,6 +1020,7 @@ export const fixtures = {
             "time": "06.30",
             "group": "Group A",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Mexico City",
             "teams": [
                 {
@@ -986,6 +1039,7 @@ export const fixtures = {
             "time": "06.30",
             "group": "Group A",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Monterrey",
             "teams": [
                 {
@@ -1006,6 +1060,7 @@ export const fixtures = {
             "time": "01.30",
             "group": "Group E",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Philadelphia",
             "teams": [
                 {
@@ -1024,6 +1079,7 @@ export const fixtures = {
             "time": "01.30",
             "group": "Group E",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "New Jersey",
             "teams": [
                 {
@@ -1042,6 +1098,7 @@ export const fixtures = {
             "time": "04.30",
             "group": "Group F",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Dallas",
             "teams": [
                 {
@@ -1060,6 +1117,7 @@ export const fixtures = {
             "time": "04.30",
             "group": "Group F",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Kansas City",
             "teams": [
                 {
@@ -1078,6 +1136,7 @@ export const fixtures = {
             "time": "07.30",
             "group": "Group D",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Los Angeles",
             "teams": [
                 {
@@ -1096,6 +1155,7 @@ export const fixtures = {
             "time": "07.30",
             "group": "Group D",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "San Francisco Bay Area",
             "teams": [
                 {
@@ -1116,6 +1176,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group I",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Boston",
             "teams": [
                 {
@@ -1134,6 +1195,7 @@ export const fixtures = {
             "time": "00.30",
             "group": "Group I",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Toronto",
             "teams": [
                 {
@@ -1152,6 +1214,7 @@ export const fixtures = {
             "time": "05.30",
             "group": "Group H",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Houston",
             "teams": [
                 {
@@ -1170,6 +1233,7 @@ export const fixtures = {
             "time": "05.30",
             "group": "Group H",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Guadalajara",
             "teams": [
                 {
@@ -1188,6 +1252,7 @@ export const fixtures = {
             "time": "08.30",
             "group": "Group G",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Seattle",
             "teams": [
                 {
@@ -1206,6 +1271,7 @@ export const fixtures = {
             "time": "08.30",
             "group": "Group G",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Vancouver",
             "teams": [
                 {
@@ -1226,6 +1292,7 @@ export const fixtures = {
             "time": "02.30",
             "group": "Group L",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "New Jersey",
             "teams": [
                 {
@@ -1244,6 +1311,7 @@ export const fixtures = {
             "time": "02.30",
             "group": "Group L",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Philadelphia",
             "teams": [
                 {
@@ -1262,6 +1330,7 @@ export const fixtures = {
             "time": "05.00",
             "group": "Group K",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Miami",
             "teams": [
                 {
@@ -1280,6 +1349,7 @@ export const fixtures = {
             "time": "05.00",
             "group": "Group K",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Atlanta",
             "teams": [
                 {
@@ -1298,6 +1368,7 @@ export const fixtures = {
             "time": "07.30",
             "group": "Group J",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Kansas City",
             "teams": [
                 {
@@ -1316,6 +1387,7 @@ export const fixtures = {
             "time": "07.30",
             "group": "Group J",
             "stage": "First Stage",
+            "matchCompleted":"Pending",
             "venue": "Dallas",
             "teams": [
                 {

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import {
-  Button,
   FormControl,
   InputLabel,
   MenuItem,
@@ -10,7 +9,7 @@ import {
 import "../styles/prediction.css";
 const API_URL = import.meta.env.VITE_API_URL;
 
-function PredictionList() {
+function MatchWinner() {
   const [predictions, setPredictions] = useState([]);
 
   useEffect(() => {
@@ -51,23 +50,7 @@ function PredictionList() {
   const handleMatchChange = (event) => {
     setSelectedMatchNo(event.target.value);
   };
-  const saveResult = async (match) => {
-    const payload = {
-        matchNo: match.matchNo,
-        mobile: match.mobile,
-        paymentStatus: !match?.paymentStatus
-    };
-    try {
-        await axios.put(
-          `${API_URL}/api/predictions/payment-status`,
-          payload
-        );
-        alert("Result Saved");
-      }
-      catch (error) {
-            console.error(error);
-        }
-  }
+  
   return (
     <div className="table-container">
       <h2>Prediction List</h2>
@@ -99,10 +82,19 @@ function PredictionList() {
             <th>Predicted Score</th>
             <th>Match Score</th>
             <th>Status</th>
+            <th>Winners</th>
           </tr>
         </thead>
         <tbody>
-          {selectedPredictions.map((item, index) => (
+          {selectedPredictions
+            .sort((a, b) => {
+              if (a.paymentStatus !== b.paymentStatus) {
+                return b.paymentStatus - a.paymentStatus;
+              }
+
+              return b.points - a.points;
+            })
+            .map((item, index) => (
             <tr key={item._id}>
               <td>{index + 1}</td>
               <td>{item.name}</td>
@@ -119,13 +111,10 @@ function PredictionList() {
                   : null}
               </td>
               <td>
-                <Button
-                  variant="contained"
-                  size="small"
-                  onClick={() => saveResult(item)}
-                >
-                  {item?.paymentStatus ? 'Paid' : 'Mark as Paid'}
-                </Button>
+                {item?.paymentStatus ? 'Paid' : 'Not Paid'}
+              </td>
+              <td>
+                {item.points}
               </td>
             </tr>
           ))}
@@ -135,4 +124,4 @@ function PredictionList() {
     </div>
   );
 }
-export default PredictionList;
+export default MatchWinner;

@@ -7,6 +7,7 @@ import PredictionList from "./pages/PredictionList";
 import Prediction from "./pages/Prediction";
 import MyPredictions from "./pages/MyPredictions";
 import AdminPage from './pages/Admin'
+import MatchWinner from "./components/MatchWinner";
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
         <Route
           path="/admin"
           element={<AdminPage />}
+        />
+        <Route
+          path="/MatchWinner"
+          element={<MatchWinner />}
         />
       </Routes>
     </BrowserRouter>

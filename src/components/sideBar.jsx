@@ -7,13 +7,13 @@ export default function SideBar() {
             FIFA WORLD CUP 2026
           </div>
 
-          <div className="badge">
+          {/* <div className="badge">
             🏆 ₹50 prize per match
           </div>
 
           <div className="badge">
             📱 ₹10 per prediction
-          </div>
+          </div> */}
         </aside>
     )
 }

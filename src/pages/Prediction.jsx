@@ -4,7 +4,11 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { 
+  fetchPredictions
+} from "../features/prediction/predictionSlice";
 import SideBar from "../components/sideBar";
 import MainContent from './MainContent';
 import "../styles/prediction.css";
@@ -13,6 +17,7 @@ import dayjs from 'dayjs';
 import customParseFormat from "dayjs/plugin/customParseFormat";
 
 export default function Prediction() {
+    const dispatch = useDispatch();
     dayjs.extend(customParseFormat);
 
     const getAvailableMatches = (fixtures) => {
@@ -43,10 +48,11 @@ export default function Prediction() {
         const match = matches.find(
             (item) => item.match === event.target.value
         );
-
         setSelectedMatch(match);
     };
-
+    useEffect(() => {
+      dispatch(fetchPredictions());
+    }, [dispatch]);
     return (
         <>
         <div className="prediction-page">

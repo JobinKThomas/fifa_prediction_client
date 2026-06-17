@@ -14,10 +14,6 @@ export const getPredictionsListApi = async () => {
   const { data } = await axios.get(`${API_URL}/api/predictions`);
   return data.data;
 };
-export const getLeaderBoardApi = async () => {
-  const { data } = await axios.get(`${API_URL}/api/predictions`);
-  return data.data;
-};
 export const updateMatchResultApi = async (payload) => {
   const { data } = await axios.put(
     `${API_URL}/api/predictions/match-result`,

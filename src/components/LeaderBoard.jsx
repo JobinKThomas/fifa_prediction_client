@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { 
-  fetchLeaderBoard
+  fetchPredictions
 } from "../features/prediction/predictionSlice";
 
 import {
@@ -31,7 +31,7 @@ export default function LeaderBoard() {
     setExpanded(isExpanded ? panel : false);
   };
   useEffect(() => {
-    dispatch(fetchLeaderBoard());
+    dispatch(fetchPredictions());
   }, [dispatch]);
   
   const leaderboard = Object.values(

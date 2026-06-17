@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { 
     getPredictionsListApi,
-    getLeaderBoardApi,
     updateMatchResultApi,
     updatePaymentStatusApi,
     createPredictionApi
@@ -41,12 +40,6 @@ export const updatePaymentStatus = createAsyncThunk(
         error.response?.data || error.message
       );
     }
-  }
-);
-export const fetchLeaderBoard = createAsyncThunk(
-  "predictions/fetchLeaderBoard",
-  async () => {
-    return await getLeaderBoardApi();
   }
 );
 export const updateMatchResult = createAsyncThunk(
@@ -114,22 +107,11 @@ const predictionSlice = createSlice({
       .addCase(fetchPredictions.fulfilled, (state, action) => {
         state.loading = false;
         state.predictionData = action.payload;
-      })
-      .addCase(fetchPredictions.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      })
-
-      .addCase(fetchLeaderBoard.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(fetchLeaderBoard.fulfilled, (state, action) => {
-        state.loading = false;
         state.predictionResults = (action.payload || []).filter(
           item => item.matchCompleted
         );
       })
-      .addCase(fetchLeaderBoard.rejected, (state, action) => {
+      .addCase(fetchPredictions.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
       })
